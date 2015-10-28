@@ -1,0 +1,14 @@
+.cache
+.bash_history
+.bash_logout
+Downloads
+.gnome
+.local
+.pki
+.wicd
+.Xauthority
+.xsession-errors
+.config/google-chrome
+.config/gtk-2.0
+.config/htop
+.config/menus

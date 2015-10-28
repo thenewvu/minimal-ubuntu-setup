@@ -1,0 +1,5 @@
+[user]
+	name = Vu Le
+	email = thenewvu@gmail.com
+[credential]
+	helper = cache --timeout=9999999

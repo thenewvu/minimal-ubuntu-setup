@@ -1,0 +1,38 @@
+general {
+	colors = false
+	interval = 10
+}
+
+order += "disk /"
+order += "wireless wlan0"
+order += "ethernet p3p1"
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime local"
+
+wireless wlan0 {
+        format_up = "W:%ip - %essid - %quality"
+        format_down = ""
+}
+
+ethernet p3p1 {
+        format_up = "E:%ip"
+        format_down = ""
+}
+
+tztime local {
+        format = "%A %Y-%m-%d %H:%M"
+}
+
+load {
+        format = "%1min"
+}
+
+cpu_temperature 0 {
+        format = "%degrees°C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}
