@@ -29,5 +29,5 @@ The system only takes about 78MB of RAM at startup. With 4GB of RAM, you will fe
 3. Use the USB stick to install Ubuntu on the hard disk or the USB stick itself.
 4. Install git by running 'sudo apt-get install git'.
 5. Clone this repo to your home directory `/home/<your-username>`.
-6. Be sure you're in the home directory, run the setup 'sudo chmod a+x ./minimal-ubuntu-setup.sh && ./minimal-ubuntu-setup.sh'
+6. Be sure you're in the home directory, run the setup `sudo chmod a+x ./minimal-ubuntu-setup.sh && ./minimal-ubuntu-setup.sh`
 7. Done!
