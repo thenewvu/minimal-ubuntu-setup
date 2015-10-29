@@ -13,3 +13,6 @@ Downloads
 .config/htop
 .config/menus
 .viminfo
+.lesshst
+.oracle_jre_usage
+.dbus
