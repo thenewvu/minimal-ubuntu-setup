@@ -1,5 +1,5 @@
-*font: xft:Source Code Pro:style=Medium:pixelsize=14:antialias=true:hinting=true
-*letterSpace: -1
+x-terminal-emulator.font: xft:Source Code Pro:style=Medium:pixelsize=14:antialias=true:hinting=true
+x-terminal-emulator.letterSpace: -1
 
 *background         : #263238
 *foreground         : #eceff1
@@ -29,9 +29,9 @@
 *color7             : #cfd8dc
 *color15            : #eceff1
 
-*.scrollstyle: plain
-*.scrollBar_right: true
+x-terminal-emulator.scrollstyle: plain
+x-terminal-emulator.scrollBar_right: true
 
-*.cursorUnderline: true
-*.cursorBlink: true
-*.cursorColor: 2
+x-terminal-emulator.cursorUnderline: true
+x-terminal-emulator.cursorBlink: true
+x-terminal-emulator.cursorColor: 2
