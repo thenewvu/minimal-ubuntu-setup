@@ -3,32 +3,50 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <meta name="viewport" content="width=640">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>Vu&#39;s minimal ubuntu setup by thenewvu</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Vu&#39;s minimal ubuntu setup</h1>
-        <h2>It&#39;s addictive, you&#39;ve been warned!</h2>
-        <a href="https://github.com/thenewvu/minimal-ubuntu-setup" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <a id="forkme_banner" href="https://github.com/thenewvu/minimal-ubuntu-setup">View on GitHub</a>
+    <div class="shell">
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h2>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Vu&#39;s minimal ubuntu setup</h1>
+            <h2>It&#39;s addictive, you&#39;ve been warned!</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/thenewvu/minimal-ubuntu-setup/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/thenewvu/minimal-ubuntu-setup/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h2>
 <a id="whats-this-" class="anchor" href="#whats-this-" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's this ?</h2>
 
 <p>My minimal ubuntu setup script and dot files for the system.</p>
@@ -67,35 +85,34 @@
 <a id="how-to-make-it-" class="anchor" href="#how-to-make-it-" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to make it ?</h2>
 
 <ol>
-<li>Install Unetbootin.</li>
-<li>Use Unetbootin to create a bootable USB stick with Ubuntu 14.04 NetInstall x64 option.</li>
-<li>Use the USB stick to install Ubuntu on the hard disk or the USB stick itself.</li>
-<li>Install git by running 'sudo apt-get install git'.</li>
+<li>Install <code>Unetbootin</code>.</li>
+<li>Use <code>Unetbootin</code> to create a bootable USB stick with <code>Ubuntu 14.04 NetInstall x64</code> option.</li>
+<li>Use the USB stick to install Ubuntu on the hard disk or the USB stick itself. You'll be asked to choose some window manager and some package bundles , don't choose any of this list:
+<img src="http://i.stack.imgur.com/Nu44s.jpg" alt="don't choose any of this list">
+</li>
+<li>After the above process finished and the system rebooted, install git by running <code>sudo apt-get install git</code>.</li>
 <li>Clone this repo to your home directory <code>/home/&lt;your-username&gt;</code>.</li>
 <li>Be sure you're in the home directory, run the setup <code>sudo chmod a+x ./minimal-ubuntu-setup.sh &amp;&amp; ./minimal-ubuntu-setup.sh</code>
 </li>
 <li>Done!</li>
 </ol>
-        </section>
+      </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/thenewvu/minimal-ubuntu-setup/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/thenewvu/minimal-ubuntu-setup/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/thenewvu">thenewvu</a> can be found on <a href="https://github.com/thenewvu/minimal-ubuntu-setup">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-          <p class="repo-owner"><a href="https://github.com/thenewvu/minimal-ubuntu-setup"></a> is maintained by <a href="https://github.com/thenewvu">thenewvu</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
     </div>
 
-            <script type="text/javascript">
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
