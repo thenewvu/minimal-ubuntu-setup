@@ -115,3 +115,6 @@ fi
 
 # customized bash prompt
 export PS1="\[$(tput setb 2)\]\[$(tput setf 0)\][\u@\h]-[\w]\\[$(tput sgr0)\]\n>"
+
+# aliases
+alias gg="git log --oneline --abbrev-commit --all --graph --decorate --color"
