@@ -1,2 +1,3 @@
 set noswapfile
+set hlsearch
 
