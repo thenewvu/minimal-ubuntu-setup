@@ -65,3 +65,5 @@ If it's running Windows, you can use Minitool Partition Wizard (free) to do that
 
 
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
+
+**Ref:** [Don't clone a bigger partition to a smaller partition](http://askubuntu.com/questions/409204/how-to-clone-to-a-smaller-harddisk)
