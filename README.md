@@ -62,3 +62,6 @@ If it's running Windows, you can use Minitool Partition Wizard (free) to do that
 **Note:** You need some time to figure out what the *beep* in /boot/grub/brub.cfg.
 
 **Note:** There're a lot WTF stuffs in this step. Keep calm and you will get it. I will add more document in the future.
+
+
+**Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
