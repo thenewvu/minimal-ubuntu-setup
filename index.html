@@ -96,6 +96,42 @@
 </li>
 <li>Done!</li>
 </ol>
+
+<h2>
+<a id="clone-the-system-to-another-computer" class="anchor" href="#clone-the-system-to-another-computer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone the system to another computer</h2>
+
+<p><strong>Note:</strong> This way is only applied to the case that you installed the system to the USB stick itself in the 'How to make it ?' above. If you installed the system to the hard disk, find a way out by youself, it should be similar :)</p>
+
+<p><strong>Note:</strong> The good news is the OS which is running in the new computer won't be affected, it's still there, you can boot it normally. The bad news is you need the USB to boot the new computer to use the Ubuntu system, because Grub was installed the USB.</p>
+
+<p><strong>Note:</strong> I assume your system installed to /dev/sdb1 on the USB.</p>
+
+<ul>
+<li>On the new computer, you need create a new ext4 partition. I assume the new partition at /dev/sda6.
+If it's running Windows, you can use Minitool Partition Wizard (free) to do that.</li>
+<li>Boot the new computer by the USB, you should be in the Ubuntu system now.</li>
+<li>Clone the system to the new partition by running: <code>dd if=/dev/sdb1 of=/dev/sda6 conv=notrunc</code>.</li>
+<li>Generate a new UUID for the new partition:</li>
+</ul>
+
+<pre><code>    # Generate a new UUID by running:
+    uuidgen
+    # Change partition UUID by running:
+    sudo tune2fs /dev/sda6 -U &lt;new-uuid&gt;
+</code></pre>
+
+<ul>
+<li>Update GRUP config in the USB by running: <code>sudo update-grub</code>.</li>
+<li>Ensure the partition UUIDs are right in /boot/grub/grub.cfg.</li>
+</ul>
+
+<pre><code>    #List partition UUIDs by running:
+    ll /dev/disk/by-uuid
+</code></pre>
+
+<p><strong>Note:</strong> You need some time to figure out what the <em>beep</em> in /boot/grub/brub.cfg.</p>
+
+<p><strong>Note:</strong> There're a lot WTF stuffs in this step. Keep calm and you will get it. I will add more document in the future.</p>
       </section>
 
       <footer>
