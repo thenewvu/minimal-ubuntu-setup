@@ -32,6 +32,6 @@ x-terminal-emulator.letterSpace: -1
 x-terminal-emulator.scrollstyle: plain
 x-terminal-emulator.scrollBar_right: true
 
-x-terminal-emulator.cursorUnderline: true
+x-terminal-emulator.cursorUnderline: false
 x-terminal-emulator.cursorBlink: true
 x-terminal-emulator.cursorColor: 2
