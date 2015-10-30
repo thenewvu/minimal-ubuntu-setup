@@ -32,3 +32,33 @@ The system only takes about 78MB of RAM at startup. With 4GB of RAM, you will fe
 5. Clone this repo to your home directory `/home/<your-username>`.
 6. Be sure you're in the home directory, run the setup `sudo chmod a+x ./minimal-ubuntu-setup.sh && ./minimal-ubuntu-setup.sh`
 7. Done!
+
+## Clone the system to another computer
+
+**Note:** This way is only applied to the case that you installed the system to the USB stick itself in the 'How to make it ?' above. If you installed the system to the hard disk, find a way out by youself, it should be similar :)
+
+**Note:** The good news is the OS which is running in the new computer won't be affected, it's still there, you can boot it normally. The bad news is you need the USB to boot the new computer to use the Ubuntu system, because Grub was installed the USB.
+
+**Note:** I assume your system installed to /dev/sdb1 on the USB.
+
+* On the new computer, you need create a new ext4 partition. I assume the new partition at /dev/sda6.
+If it's running Windows, you can use Minitool Partition Wizard (free) to do that.
+* Boot the new computer by the USB, you should be in the Ubuntu system now.
+* Clone the system to the new partition by running: `dd if=/dev/sdb1 of=/dev/sda6 conv=notrunc`.
+* Generate a new UUID for the new partition:
+```
+    # Generate a new UUID by running:
+    uuidgen
+    # Change partition UUID by running:
+    sudo tune2fs /dev/sda6 -U <new-uuid>
+```
+* Update GRUP config in the USB by running: `sudo update-grub`.
+* Ensure the partition UUIDs are right in /boot/grub/grub.cfg.
+```
+    #List partition UUIDs by running:
+    ll /dev/disk/by-uuid
+```
+
+**Note:** You need some time to figure out what the *beep* in /boot/grub/brub.cfg.
+
+**Note:** There're a lot WTF stuffs in this step. Keep calm and you will get it. I will add more document in the future.
