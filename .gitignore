@@ -17,3 +17,4 @@ Downloads
 .oracle_jre_usage
 .dbus
 **/*.log
+.java
