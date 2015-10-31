@@ -32,6 +32,7 @@ sudo apt-get install tree
 sudo apt-get install software-properties-common
 sudo apt-get install vim
 sudo apt-get install git
+sudo apt-get install p7zip-full
 
 # install jdk8
 sudo add-apt-repository ppa:webupd8team/java
