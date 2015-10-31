@@ -123,7 +123,8 @@
   <group
      id="tools"
      bounding_box="0"
-     style="fill:none;stroke:black;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;">
+     style="fill:none;stroke:black;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;"
+     cvg_convert_whole_groups="1">
     <group
        id="shapes"
        style="fill-rule:evenodd;"
@@ -577,10 +578,29 @@
        ignorenumbers="1" />
     <group
        id="documentoptions"
-       state="1" />
+       state="1"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="470"
+       y="119"
+       w="425"
+       h="530" />
     <group
        id="preferences"
-       state="1" />
+       state="1"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       page="46"
+       x="244"
+       y="120"
+       w="877"
+       h="528" />
     <group
        id="gradienteditor" />
     <group
@@ -743,7 +763,7 @@
        uri="" />
     <group
        id="savewindowgeometry"
-       value="1" />
+       value="0" />
     <group
        id="defaultoffsetwidth"
        value="2px" />
@@ -774,7 +794,7 @@
        value="0" />
     <group
        id="transientpolicy"
-       value="1" />
+       value="2" />
     <group
        id="scrollingacceleration"
        value="0.4" />
@@ -807,7 +827,7 @@
        value="1" />
     <group
        id="dialogtype"
-       value="1" />
+       value="0" />
     <group
        id="dock"
        cancenterdock="1"
@@ -991,12 +1011,12 @@
   <group
      id="toolbox"
      icononly="1"
-     secondary="1"
-     small="1">
+     secondary="2"
+     small="2">
     <group
        id="tools"
        icononly="1"
-       small="0" />
+       small="2" />
   </group>
   <group
      id="iconpreview"
