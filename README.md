@@ -102,3 +102,11 @@ Make ensure all partition IDs, UUIDs are correct in `/boot/grub/grub.cfg` (IMPOR
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
 
 **Ref:** [Don't clone a bigger partition to a smaller partition](http://askubuntu.com/questions/409204/how-to-clone-to-a-smaller-harddisk)
+
+
+## TODOs
+
+* Find a way to keep changes in /boot/grub/grub.cfg from overwritten after update kernel. ref: [Is it possible to edit grub.cfg?](http://askubuntu.com/questions/437323/is-it-possible-to-edit-grub-cfg)
+* [Learn more about GRUB](http://www.dedoimedo.com/computers/grub-2.html)
+* [Grub Customizer](https://launchpad.net/grub-customizer)
+* [How to: Create a Customized GRUB2 Screen that is Maintenance Free.](http://ubuntuforums.org/showthread.php?t=1542338)
