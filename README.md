@@ -1,6 +1,6 @@
 ## What's it ?
 
-A setup script and dot files that helps you build up a minimal but powerful Ubuntu distro with the Unix philosophy `Do One Thing and Do It Well` in mind for developer.
+A setup script and dot files that helps you build up a minimal but powerful Ubuntu system with the Unix philosophy `Do One Thing and Do It Well` in mind for developer.
 
 ## Why ?
 
