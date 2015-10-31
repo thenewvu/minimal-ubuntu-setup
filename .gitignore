@@ -18,3 +18,5 @@ Downloads
 .dbus
 **/*.log
 .java
+UMLet
+bin
