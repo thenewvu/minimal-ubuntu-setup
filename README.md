@@ -1,18 +1,27 @@
-## What's this ?
+## What's it ?
 
-My minimal ubuntu setup script and dot files for the system.
+A setup script and dot files that helps you build up a minimal but powerful Ubuntu distro with the Unix philosophy `Do One Thing and Do It Well` in mind for developer.
 
-The system includes:
+## Why ?
+
+We usually expect more than what a single thing provides, this leads to a scene where one thing has to do many jobs. Did it do them well ? Are you happy with it ? The answers usually are `No` and `No`!
+
+Why you have to want your Vim become a Python IDE that includes a debugger, a autocompleter, a builder, a VCS client... and in fact that you never be happy with it, because there is always something that not perfect and you never accept that.
+
+So ... what's the point ?
+
+The point is Vim was not borned to achieve that goal (becomes a Python IDE). What you did just forces it to be. Try `PyCharm CE`, it was borned to become a powerful Python IDE, and that's what you need.
+
+## What does it bring to you ?
+
 * `xserver-xorg` as the graphics manager.
-* `xinit` as the window manager bootstraptor (I found out that I don't need the display manager).
+* `xinit` as the window manager bootstraptor (one more display manager is not nessesary here).
 * `i3` as the window manager.
 * `inkscape` as the vector graphics editor.
 * `chrome` as the browser.
 * `jdk8`
-* `vim` as the code editor.
+* `vim` as the text editor.
 * other stuffs
-
-I optimized the system setup to make it match the Unix philosophy `Do One Thing and Do It Well`, of course it's applied to the system, not to me, I love to do many things and do them well :)
 
 The system only takes about 78MB of RAM at startup. With 4GB of RAM, you will feel so comfortable even the system's running `chrome` with a bundle of tabs, `android-studio` and 1 or 2 android emulator(s).
 
@@ -24,44 +33,54 @@ The system only takes about 78MB of RAM at startup. With 4GB of RAM, you will fe
 
 ## How to make it ?
 
-1. Install `Unetbootin`.
-2. Use `Unetbootin` to create a bootable USB stick with `Ubuntu 14.04 NetInstall x64` option.
-3. Use the USB stick to install Ubuntu on the hard disk or the USB stick itself. You'll be asked to choose some window manager and some package bundles , don't choose any of this list:
+* Install [Unetbootin](http://unetbootin.github.io/).
+* Use `Unetbootin` to create a bootable USB stick with `Ubuntu 14.04 NetInstall x64` option.
+* Use the USB stick to install Ubuntu on the hard disk or the USB stick itself. You'll be asked to choose some window manager and some package bundles , don't choose any of this list:
 ![don't choose any of this list](http://i.stack.imgur.com/Nu44s.jpg)
-4. After the above process finished and the system rebooted, install git by running `sudo apt-get install git`.
-5. Clone this repo to your home directory `/home/<your-username>`.
-6. Be sure you're in the home directory, run the setup `sudo chmod a+x ./minimal-ubuntu-setup.sh && ./minimal-ubuntu-setup.sh`
-7. Done!
+* After the above process finished and the system rebooted, install git by running `sudo apt-get install git`.
+* Clone this repo to your home directory `/home/<your-username>`.
+* Be sure you're in the home directory, run the setup `sudo chmod a+x ./minimal-ubuntu-setup.sh && ./minimal-ubuntu-setup.sh`
+* Done!
 
 ## Clone the system to another computer
 
-**Note:** This way is only applied to the case that you installed the system to the USB stick itself in the 'How to make it ?' above. If you installed the system to the hard disk, find a way out by youself, it should be similar :)
+**Note:** You need at least basic knowledge of GRUB first.
 
-**Note:** The good news is the OS which is running in the new computer won't be affected, it's still there, you can boot it normally. The bad news is you need the USB to boot the new computer to use the Ubuntu system, because Grub was installed the USB.
+**Note:** If you installed the system on the USB stick in the above 3rd step, you can clone it to another computer by below steps.
 
-**Note:** I assume your system installed to /dev/sdb1 on the USB.
+**Note:** The current OS is runnning on the new computer will be not affected.
 
-* On the new computer, you need create a new ext4 partition. I assume the new partition at /dev/sda6.
-If it's running Windows, you can use Minitool Partition Wizard (free) to do that.
-* Boot the new computer by the USB, you should be in the Ubuntu system now.
-* Clone the system to the new partition by running: `dd if=/dev/sdb1 of=/dev/sda6 conv=notrunc`.
-* Generate a new UUID for the new partition:
-```
-    # Generate a new UUID by running:
-    uuidgen
-    # Change partition UUID by running:
-    sudo tune2fs /dev/sda6 -U <new-uuid>
-```
-* Update GRUP config in the USB by running: `sudo update-grub`.
-* Ensure the partition UUIDs are right in /boot/grub/grub.cfg.
-```
-    #List partition UUIDs by running:
-    ll /dev/disk/by-uuid
-```
+You should be in the system that booted from the USB stick now. Check the partition id where the system was installed to:
 
-**Note:** You need some time to figure out what the *beep* in /boot/grub/brub.cfg.
+`sudo fdisk -l`
 
-**Note:** There're a lot WTF stuffs in this step. Keep calm and you will get it. I will add more document in the future.
+I assume that it's `/dev/sdb1`.
+
+Next, you need to create a new ext4 partition on the hard disk of the new computer. To do this, you can use `fdisk`(Linux) or `Minitool Partition Wizard` (Windows). I assume the new partition at `/dev/sda6`.
+
+Next, clone the system in the USB to the new partition in the new computer:
+
+`dd if=/dev/sdb1 of=/dev/sda6 conv=notrunc`
+
+Because I cloned so `/dev/sdb1` and `/dev/sda6` has the same UUID now. We need to change it.
+
+Generate a new UUID:
+
+`uuidgen`
+
+Change `/dev/sda6`'s UUID:
+
+`sudo tune2fs /dev/sda6 -U <new-uuid>`
+
+Next, we need to install GRUB on the hard disk of the new computer:
+
+`sudo grub-install /dev/sda`
+
+Now, you need to ensure all partition IDs and UUIDs are correct in /boot/grub/grub.cfg.
+
+To list all UUIDs of partitions:
+
+`ll /dev/disk/by-uuid`
 
 
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
