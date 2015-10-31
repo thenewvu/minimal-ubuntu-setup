@@ -40,7 +40,7 @@ sudo apt-get install oracle-java8-installer
 
 # enable sound
 sudo apt-get install alsa-base gstreamer0.10-alsa
-sudo usermod -a -G audio vu
+sudo usermod -a -G audio $USER
 
 # setup inkscape ppa and install it
 sudo add-apt-repository ppa:inkscape.dev/stable
