@@ -11,7 +11,7 @@ Then update resolvconf:
 
 `sudo resolvconf -u`
 
-Ref: `man resolvconf`
+Ref: `man resolvconf`  
 Ref: [How do I set my DNS on Ubuntu 14.04?](http://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-on-ubuntu-14-04)
 
 ## Why does “Waiting for network configuration” message show up on Ubuntu boot
