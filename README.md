@@ -96,7 +96,7 @@ Next, we need to install GRUB on the hard disk of the new computer:
 
 `sudo grub-install /dev/sda`
 
-Make ensure all partition IDs, UUIDs are correct in `/boot/grub/grub.cfg` (IMPORTANT!, the system is not bootable if something wrong).
+Make sure all partition IDs, UUIDs are correct in `/boot/grub/grub.cfg` (IMPORTANT!, the system is not bootable if something wrong).
 
 
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
