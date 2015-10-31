@@ -76,15 +76,27 @@ Change `/dev/sda6`'s UUID:
 
 `sudo tune2fs /dev/sda6 -U <new-uuid>`
 
+Next, update the GRUB configuration in the USB:
+
+`sudo update-grub`
+
+Make sure all partition IDs, UUIDs are correct in /boot/grub/grub.cfg (IMPORTANT!, the system is not able to boot if something wrong). To list all UUIDs of partitions:
+
+`ll /dev/disk/by-uuid`
+
+Reboot, and choose the GRUB menu entry of the Ubuntu system installed on the hard disk.
+
+To be sure that you choosed the Ubuntu system on the hard disk, after the system booted up, run `mount` you should see something like this:
+
+`/dev/sda6 on / type ext4 (rw,errors=remount-ro)`
+
+Right now, you can only boot the system on the hard disk by the USB stick, because GRUB installed on the USB, not on the hard disk.
+
 Next, we need to install GRUB on the hard disk of the new computer:
 
 `sudo grub-install /dev/sda`
 
-Now, you need to ensure all partition IDs and UUIDs are correct in /boot/grub/grub.cfg.
-
-To list all UUIDs of partitions:
-
-`ll /dev/disk/by-uuid`
+Make ensure all partition IDs, UUIDs are correct in /boot/grub/grub.cfg (IMPORTANT!, the system is not able to boot if something wrong).
 
 
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
