@@ -49,7 +49,7 @@
         <h2>
 <a id="whats-it-" class="anchor" href="#whats-it-" aria-hidden="true"><span class="octicon octicon-link"></span></a>What's it ?</h2>
 
-<p>A setup script and dot files that helps you build up a minimal but powerful Ubuntu distro with the Unix philosophy <code>Do One Thing and Do It Well</code> in mind for developer.</p>
+<p>A setup script and dot files that helps you build up a minimal but powerful Ubuntu system with the Unix philosophy <code>Do One Thing and Do It Well</code> in mind for developer.</p>
 
 <h2>
 <a id="why-" class="anchor" href="#why-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why ?</h2>
@@ -142,15 +142,27 @@
 
 <p><code>sudo tune2fs /dev/sda6 -U &lt;new-uuid&gt;</code></p>
 
+<p>Next, update the GRUB configuration in the USB:</p>
+
+<p><code>sudo update-grub</code></p>
+
+<p>Make sure all partition IDs, UUIDs are correct in <code>/boot/grub/grub.cfg</code> (IMPORTANT!, the system is not bootable if something wrong). To list all UUIDs of partitions:</p>
+
+<p><code>ll /dev/disk/by-uuid</code></p>
+
+<p>Reboot and choose the GRUB menu entry of the Ubuntu system installed on the hard disk.</p>
+
+<p>To be sure that you choosed the Ubuntu system on the hard disk, after the system booted up, run <code>mount</code> you should see something like this:</p>
+
+<p><code>/dev/sda6 on / type ext4 (rw,errors=remount-ro)</code></p>
+
+<p>Right now, you can only boot the system on the hard disk by the USB stick, because GRUB installed on the USB, not on the hard disk.</p>
+
 <p>Next, we need to install GRUB on the hard disk of the new computer:</p>
 
 <p><code>sudo grub-install /dev/sda</code></p>
 
-<p>Now, you need to ensure all partition IDs and UUIDs are correct in /boot/grub/grub.cfg.</p>
-
-<p>To list all UUIDs of partitions:</p>
-
-<p><code>ll /dev/disk/by-uuid</code></p>
+<p>Make ensure all partition IDs, UUIDs are correct in <code>/boot/grub/grub.cfg</code> (IMPORTANT!, the system is not bootable if something wrong).</p>
 
 <p><strong>Ref:</strong> <a href="http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa">Resize the new partition after cloning</a></p>
 
