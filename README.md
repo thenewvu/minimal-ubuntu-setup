@@ -80,11 +80,11 @@ Next, update the GRUB configuration in the USB:
 
 `sudo update-grub`
 
-Make sure all partition IDs, UUIDs are correct in /boot/grub/grub.cfg (IMPORTANT!, the system is not able to boot if something wrong). To list all UUIDs of partitions:
+Make sure all partition IDs, UUIDs are correct in `/boot/grub/grub.cfg` (IMPORTANT!, the system is not bootable if something wrong). To list all UUIDs of partitions:
 
 `ll /dev/disk/by-uuid`
 
-Reboot, and choose the GRUB menu entry of the Ubuntu system installed on the hard disk.
+Reboot and choose the GRUB menu entry of the Ubuntu system installed on the hard disk.
 
 To be sure that you choosed the Ubuntu system on the hard disk, after the system booted up, run `mount` you should see something like this:
 
@@ -96,7 +96,7 @@ Next, we need to install GRUB on the hard disk of the new computer:
 
 `sudo grub-install /dev/sda`
 
-Make ensure all partition IDs, UUIDs are correct in /boot/grub/grub.cfg (IMPORTANT!, the system is not able to boot if something wrong).
+Make ensure all partition IDs, UUIDs are correct in `/boot/grub/grub.cfg` (IMPORTANT!, the system is not bootable if something wrong).
 
 
 **Ref:** [Resize the new partition after cloning](http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa)
