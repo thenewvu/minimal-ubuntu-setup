@@ -25,3 +25,27 @@ Two, reduce the waiting time in `/etc/init/failsafe.conf` follow this [link](htt
 
 Ref: `man interfaces`  
 Ref: [failsafe.conf's 30 second time out is too low](https://bugs.launchpad.net/ubuntu/+source/upstart/+bug/839595)
+
+## How to allow non-root users to mount a particular partition
+
+Get the UUID of the partition will be mounted:
+
+`ll /dev/disk/by-uuid`
+
+Open `/etc/fstab` and add:
+
+`UUID=<the-uuid> /mnt/<the-name-of-partition>        ext4    user,rw,exec,noauto 0`
+
+Update new `fstab` by:
+
+`mount -a`
+
+To mount:
+
+`mount /mnt/<the-name-of-partition>`
+
+or
+
+`mount /dev/<the-partition-id>`
+
+Ref: `man fstab`
