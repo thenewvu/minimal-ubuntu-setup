@@ -44,9 +44,9 @@ The system only takes about 78MB of RAM at startup. With 4GB of RAM, you will fe
 
 ## Clone the system to another computer
 
-**Note:** You need at least basic knowledge of GRUB first.
+**Note:** Below steps requires you installed the system on the USB stick in the above 3rd step
 
-**Note:** If you installed the system on the USB stick in the above 3rd step, you can clone it to another computer by below steps.
+**Note:** You need at least basic knowledge of GRUB first.
 
 **Note:** The current OS is runnning on the new computer will be not affected.
 
