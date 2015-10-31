@@ -12,6 +12,10 @@ So ... what's the point ?
 
 The point is Vim was not borned to achieve that goal (becomes a Python IDE). What you did just forces it to be. Try `PyCharm CE`, it was borned to become a powerful Python IDE, and that's what you need.
 
+So ... what's the better solution ?
+
+Don't force one thing do more than one job, if you want more, create or find a new thing which should be borned to do that job.
+
 ## What does it bring to you ?
 
 * `xserver-xorg` as the graphics manager.
