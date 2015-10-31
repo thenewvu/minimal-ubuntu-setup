@@ -1,5 +1,4 @@
-# turnoff vim swapfile
-echo "set noswapfile" >> ~/.vimrc
+#!/bin/bash
 
 # install graphic manager
 sudo apt-get update
