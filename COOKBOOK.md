@@ -63,3 +63,15 @@ Then reload font cache:
 To list available fonts:
 
 `fc-list`
+
+## How to change UUID of a partition ?
+
+First, generate a new UUID:
+
+`uuidgen`
+
+Then change the UUID of the partition:
+
+`sudo tune2fs /dev/<the-partition-id> -U <new-uuid>`
+
+
