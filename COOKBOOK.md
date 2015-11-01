@@ -74,4 +74,13 @@ Then change the UUID of the partition:
 
 `sudo tune2fs /dev/<the-partition-id> -U <new-uuid>`
 
+## How to count the size of a directory ?
+
+Run:
+
+`du -sh <the-directory>`
+
+`-s` - print only the size of the directory, not it's inners.
+`-h` - print the size in human readable format (GB, MB, ...).
+
 
