@@ -49,3 +49,17 @@ or
 `mount /dev/<the-partition-id>`
 
 Ref: `man fstab`
+
+## How to add new fonts ?
+
+Copy new fonts to `~/.fonts/`, for example:
+
+`~/.fonts/truetype/source-code-pro/SourceCodePro-Black.ttf`
+
+Then reload font cache:
+
+`fc-cache -fv`
+
+To list available fonts:
+
+`fc-list`
