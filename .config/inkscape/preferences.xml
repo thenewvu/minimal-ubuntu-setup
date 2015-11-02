@@ -13,7 +13,7 @@
        state="1" />
     <group
        id="commands"
-       state="1" />
+       state="0" />
     <group
        id="snaptoolbox"
        state="1" />
@@ -31,10 +31,10 @@
        state="1" />
     <group
        id="rulers"
-       state="1" />
+       state="0" />
     <group
        id="scrollbars"
-       state="1" />
+       state="0" />
   </group>
   <group
      id="fullscreen">
@@ -134,8 +134,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="0"
-         height="0"
+         width="320"
+         height="200"
          rx="0"
          ry="0" />
       <eventcontext
@@ -409,7 +409,7 @@
        id="connector"
        style="fill:none;fill-rule:evenodd;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-width:1px;stroke-linecap:butt;"
        selcue="1"
-       curvature="3"
+       curvature="0"
        length="100" />
     <eventcontext
        id="paintbucket"
@@ -552,11 +552,22 @@
        panel_border="0" />
   </group>
   <group
-     id="dialogs">
+     id="dialogs"
+     showclose="1">
     <group
        id="toolbox" />
     <group
-       id="fillstroke" />
+       id="fillstroke"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       page="1"
+       x="548"
+       y="182"
+       w="270"
+       h="441" />
     <group
        id="filtereffects" />
     <group
@@ -584,8 +595,8 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       x="470"
-       y="119"
+       x="812"
+       y="137"
        w="425"
        h="530" />
     <group
@@ -596,9 +607,9 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="46"
-       x="244"
-       y="120"
+       page="24"
+       x="489"
+       y="138"
        w="877"
        h="528" />
     <group
@@ -984,12 +995,12 @@
      id="extensions" />
   <group
      id="desktop"
-     style="">
+     style="fill:#ffc200;fill-opacity:1;stroke:none">
     <group
-       width="1362"
-       height="729"
-       x="0"
-       y="37"
+       width="679"
+       height="728"
+       x="683"
+       y="38"
        fullscreen="0"
        id="geometry"
        maximized="0" />
