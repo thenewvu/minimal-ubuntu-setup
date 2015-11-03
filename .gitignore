@@ -19,6 +19,5 @@ Downloads
 **/*.log
 .java
 UMLet
-bin
 .vim/.netrwhist
 .android
