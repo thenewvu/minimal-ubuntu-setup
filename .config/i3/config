@@ -163,4 +163,4 @@ bar {
 focus_follows_mouse no
 
 # key binding to lock screen
-bindsym $mod+Pause exec i3lock --dpms --color=#263238
+bindsym $mod+Pause exec i3lock --dpms --color=#1d1f21
