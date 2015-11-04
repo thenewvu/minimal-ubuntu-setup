@@ -103,3 +103,19 @@ Ref: [How do I add a swap partition after system installation?](http://askubuntu
 Ref: [How to Resize a Partition using fdisk](https://access.redhat.com/articles/1190213)  
 Ref: [Wiki: Swap Partition](https://wiki.archlinux.org/index.php/Swap#Swap_partition)  
 Ref: [HowTo: Check Swap Usage in Linux](http://www.cyberciti.biz/faq/linux-check-swap-usage-command/)  
+
+## How to create a new cron job ?
+
+Run:
+
+`crontab -e`
+
+Choose your favorite editor and add a new cron job entry, for example:
+
+```
+# check and kill overload process each 2 minutes
+*/2 * * * * /home/vu/bin/kill_overload
+```
+
+Ref: [HowTo: Add Jobs To cron Under Linux or UNIX?](http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/)  
+Ref: [How to Run Cron Every 5 Minutes, Seconds, Hours, Days, Months](http://www.thegeekstuff.com/2011/07/cron-every-5-minutes/)
