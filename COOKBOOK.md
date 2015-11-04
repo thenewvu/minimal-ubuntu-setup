@@ -80,7 +80,26 @@ Run:
 
 `du -sh <the-directory>`
 
-`-s` - print only the size of the directory, not it's inners.
-`-h` - print the size in human readable format (GB, MB, ...).
+`-s` - print only the size of the directory, not it's inners.  
+`-h` - print the size in human readable format (GB, MB, ...).  
 
+## How to create a swap partition after installed Linux ?
 
+Create a new partition (using fdisk maybe), then format it:
+
+`mkswap /dev/<partition-id>`
+
+The above command will print the new partition UUID as well. Add that UUID to `/etc/fstab` as:
+
+`UUID=<that-uuid> none swap sw 0 0`
+
+Restart the system.
+
+To be sure the swap partition is in active, run:
+
+`swapon -s`
+
+Ref: [How do I add a swap partition after system installation?](http://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation)  
+Ref: [How to Resize a Partition using fdisk](https://access.redhat.com/articles/1190213)  
+Ref: [Wiki: Swap Partition](https://wiki.archlinux.org/index.php/Swap#Swap_partition)  
+Ref: [HowTo: Check Swap Usage in Linux](http://www.cyberciti.biz/faq/linux-check-swap-usage-command/)  
