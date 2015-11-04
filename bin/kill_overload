@@ -1,0 +1,21 @@
+#!/bin/sh
+
+CPU_1MIN_LOAD=$(uptime | cut -d"," -f3 | cut -d":" -f2 | sed -e "s/\.//g")
+CPU_LOAD_THRESHOLD=500 # means >5.0
+
+# kill top cpu cost process
+if [ $CPU_1MIN_LOAD -gt $CPU_LOAD_THRESHOLD ]; then
+  TOP_CPU_PID=$(ps -eo pid -eo pcpu | sort -k 2 -r | grep -v PID | head -n 1 | cut -d" " -f2)
+  
+  kill -9 $TOP_CPU_PID
+fi
+
+FREE_MEM=$(free -m | grep Mem | cut -d" " -f25)
+FREE_MEM_THRESHOLD=20 # means <20MB
+
+# kill top memory cost process
+if [ $FREE_MEM -lt $FREE_MEM_THRESHOLD ]; then
+  TOP_MEM_PID=$(ps -eo pid -eo pmem | sort -k 2 -r | grep -v PID | head -n 1 | cut -d" " -f2)
+  kill -9 $OP_MEM_PID
+fi
+
