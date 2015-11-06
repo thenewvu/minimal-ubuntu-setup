@@ -1,4 +1,4 @@
-x-terminal-emulator.font: xft:Source Code Pro:style=Black:pixelsize=14:antialias=true:hinting=true
+x-terminal-emulator.font: xft:Source Code Pro:style=Black:pixelsize=16:antialias=true:hinting=true
 x-terminal-emulator.letterSpace: -1
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
