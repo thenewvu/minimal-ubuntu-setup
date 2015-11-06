@@ -115,9 +115,7 @@ fi
 
 ########################################################################
 # Customize bash prompt
-########################################################################
 
-# enable some git prompt support features
 # ref: https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUPSTREAM="auto"
@@ -127,8 +125,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 export PS1="\[$(tput setb 1)\]\[$(tput setf 0)\][\u@\h] in [\w]\$(__git_ps1 ' on [%s]')\[$(tput sgr0)\]\n>"
 
 ########################################################################
-# aliases
-########################################################################
+# Aliases
 
 alias gg="git log --oneline --abbrev-commit --all --graph --decorate --color"
 alias gs="git status"
