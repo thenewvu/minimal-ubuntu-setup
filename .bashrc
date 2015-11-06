@@ -131,3 +131,10 @@ export PS1="\[$(tput setb 1)\]\[$(tput setf 0)\][\u@\h] in [\w]\$(__git_ps1 ' on
 ########################################################################
 
 alias gg="git log --oneline --abbrev-commit --all --graph --decorate --color"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gd="git diff"
+
+alias gai="git add -p"
+alias gdc="git diff --cached"
