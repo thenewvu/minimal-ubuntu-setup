@@ -135,3 +135,8 @@ alias gd="git diff"
 
 alias gai="git add -p"
 alias gdc="git diff --cached"
+
+alias .="cd .."
+alias ..="cd ../.."
+alias ...="cd ../../.."
+alias ....="cd ../../../.."
