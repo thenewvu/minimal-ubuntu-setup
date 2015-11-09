@@ -164,3 +164,6 @@ focus_follows_mouse no
 
 # key binding to lock screen
 bindsym $mod+Pause exec i3lock --dpms --color=#1d1f21
+
+# hide window title
+for_window [class="^.*"] border pixel 1
