@@ -166,4 +166,5 @@ focus_follows_mouse no
 bindsym $mod+Pause exec i3lock --dpms --color=#1d1f21
 
 # hide window title
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*" window_type="normal"] border pixel 1
+new_window 1pixel
