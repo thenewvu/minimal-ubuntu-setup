@@ -119,3 +119,15 @@ Choose your favorite editor and add a new cron job entry, for example:
 
 Ref: [HowTo: Add Jobs To cron Under Linux or UNIX?](http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/)  
 Ref: [How to Run Cron Every 5 Minutes, Seconds, Hours, Days, Months](http://www.thegeekstuff.com/2011/07/cron-every-5-minutes/)
+
+## How to upgrade system packages ?
+
+There are 2 ways to upgrade system packages:
+
+`sudo apt-get upgrade`
+
+and
+
+`sudo apt-get dist-upgrade`
+
+The main different between `upgrade` and `dist-upgrade` is `upgrade` is a safer way, it only upgrades the version of packages, neither remove already installed packages or install new packages. Otherwise, `dist-upgrade` will check smartly package dependencies and maybe remove installed packages or install new packages if needed.
