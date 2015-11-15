@@ -141,3 +141,31 @@ Run:
 For example:
 
 `sudo apt-get --only-upgrade install google-chrome-stable`
+
+## How to list biggest size files/directories in a directory ?
+
+Run:
+
+`du -h -t <size-threshold> -x <path-to-a-directory>`
+
+Which:
+
+`-h` - print human readable size format  
+`-t <size-threshold>` - only print files/directories has bigger this threshold  
+`-x` -- only count files and directories that in the same file system
+
+A example of results:
+```
+202M	./.cache/google-chrome/Profile 1/Media Cache
+263M	./.cache/google-chrome/Profile 1/Cache
+464M	./.cache/google-chrome/Profile 1
+464M	./.cache/google-chrome
+466M	./.cache
+68M	./.config/google-chrome/Profile 1/Extensions
+91M	./.config/google-chrome/Profile 1/Application Cache/Cache
+92M	./.config/google-chrome/Profile 1/Application Cache
+251M	./.config/google-chrome/Profile 1
+286M	./.config/google-chrome
+286M	./.config
+761M	.
+```
