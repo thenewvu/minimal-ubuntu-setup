@@ -131,3 +131,13 @@ and
 `sudo apt-get dist-upgrade`
 
 The main different between `upgrade` and `dist-upgrade` is `upgrade` is a safer way, it only upgrades the version of packages, neither remove already installed packages or install new packages. Otherwise, `dist-upgrade` will check smartly package dependencies and maybe remove installed packages or install new packages if needed.
+
+## How to upgrade a particular package ?
+
+Run:
+
+`sudo apt-get --only-upgrade install <package-name>`
+
+For example:
+
+`sudo apt-get --only-upgrade install google-chrome-stable`
