@@ -169,3 +169,13 @@ A example of results:
 286M	./.config
 761M	.
 ```
+
+## How to check free space of partitions ?
+
+Run:
+
+`df -h`
+
+To check space usage, run:
+
+`du -h --max-depth=1 <the-mount-point-of-partition>`
