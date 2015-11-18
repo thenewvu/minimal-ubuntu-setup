@@ -179,3 +179,42 @@ Run:
 To check space usage, run:
 
 `du -h --max-depth=1 <the-mount-point-of-partition>`
+
+## How to install Steam and run it's games in a chroot environments ?
+
+This guide workds with chroot environment of Ubuntu 14.04 amd64.
+
+First you need a chroot environment and you're in there.
+
+To install Steam, you're should be root right now, run:
+
+```
+dpkg --add-architecture i386
+apt-get update
+apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+apt-get install steam
+```
+
+Steam requires a non-root user to run, so add a new non-root user:
+
+`useradd -m -G <username>`
+
+Which:
+`-m` - create user home directory.  
+`-G` - create a group of the same name.  
+
+Next, install `mesa-utils` package to help Steam recognize the graphics card:
+
+`apt-get install mesa-utils`
+
+Then add the non-root user to `video` user group:
+
+`usermod -a -G video <username>`
+
+That's it. Have fun with it.
+
+## How to format a partition to ext4 ?
+
+Run:
+
+`sudo mkfs -t ext /dev/<partition-id>`
