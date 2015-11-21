@@ -24,3 +24,5 @@ UMLet
 .config/inkscape
 .fonts/truetype/Roboto
 .gitconfig
+bin/adb
+bin/android_studio
