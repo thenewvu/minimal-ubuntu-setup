@@ -218,3 +218,9 @@ That's it. Have fun with it.
 Run:
 
 `sudo mkfs -t ext /dev/<partition-id>`
+
+## How to fix the weird color scheme in Vim when run on root ?
+
+Open `/etc/sudoers` as root and add this line below `Defaults env_reset`:
+
+`Defaults env_keep += "COLORFGBG COLORTERM"`
