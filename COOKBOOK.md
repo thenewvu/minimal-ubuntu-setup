@@ -224,3 +224,19 @@ Run:
 Open `/etc/sudoers` as root and add this line below `Defaults env_reset`:
 
 `Defaults env_keep += "COLORFGBG COLORTERM"`
+
+## How to list processes that are opening a file ?
+
+Run:
+
+`lsof <path-to-the-file>`
+
+Output sample:
+
+```
+>lsof /mnt
+COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF  NODE NAME
+bash    2033   vu  cwd    DIR    8,5     4096 19310 /mnt/ubuntu-system-snapshot
+```
+
+Ref: `man lsof`
