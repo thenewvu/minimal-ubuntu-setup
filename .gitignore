@@ -10,7 +10,6 @@ Downloads
 .xsession-errors
 .config/google-chrome
 .config/gtk-2.0
-.config/htop
 .config/menus
 .viminfo
 .lesshst
@@ -21,10 +20,6 @@ Downloads
 UMLet
 .vim/.netrwhist
 .android
-.config/inkscape
 .fonts/truetype/Roboto
-.gitconfig
-bin/adb
-bin/android_studio
 work
 jail
