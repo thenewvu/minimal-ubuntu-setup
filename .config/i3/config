@@ -166,7 +166,7 @@ focus_follows_mouse no
 bindsym $mod+Pause exec i3lock --dpms --color=#1d1f21
 
 # hotkey for taking screenshot
-bindsym --release $mod+Print exec --no-startup-id import /var/tmp/screenshot-$(date +"%Y%M%d-%H%M%S").png
+bindsym --release $mod+Print exec --no-startup-id import /var/tmp/screenshot-$(date +"%Y%m%d-%H%M%S").png
 
 # hide window title
 for_window [class="^.*" window_type="normal"] border pixel 1
