@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sudo dd if=/dev/sda6 of=/home/vu/windows/ubuntu-system-snapshots/snapshot-$(date +"%Y%m%d-%H%M%S").iso
