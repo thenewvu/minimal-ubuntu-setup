@@ -240,3 +240,85 @@ bash    2033   vu  cwd    DIR    8,5     4096 19310 /mnt/ubuntu-system-snapshot
 ```
 
 Ref: `man lsof`
+
+## How to create a bootable clone USB from current Ubuntu system ?
+
+**Find a USB**:
+
+First, you need an USB stick has a capacity of at least your current system size. You can check you current system size by:
+
+`df -h`
+
+Sample output:
+
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda8       7.0G  1.4G  5.3G  21% /
+none            4.0K     0  4.0K   0% /sys/fs/cgroup
+udev            1.9G  4.0K  1.9G   1% /dev
+tmpfs           388M  768K  387M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            1.9G   29M  1.9G   2% /run/shm
+none            100M     0  100M   0% /run/user
+```
+
+Here the system size is 1.4G.
+
+**Re-format the USB**:
+
+From here, I suppose that the USB is `/dev/sdb`.
+
+Delete all partitions in the USB and re-create an only one:
+
+`sudo fdisk /dev/sdb`
+
+Follow steps:
+
+`p` to list all current partitions.  
+`d` to delete all current partitions.    
+`n` to create an only partition (leave all default values).  
+`w` to save changes.  
+`q` to quit fdisk.  
+
+The only partition now is `/dev/sdb1`.
+
+Format `/dev/sdb1` as ext4:
+
+`sudo mkfs.ext4 /dev/sdb1`
+
+**Clone the system**:
+
+Mount `/dev/sdb1`:
+
+`sudo mount /dev/sdb1 /mnt`
+
+Clone the system:
+
+`sudo rsync -avxAX /* /mnt --exclude={/dev/*,/proc/*,/sys/*,/tmp/*,/run/*,/mnt/*,/media/*,/lost+found}`
+
+**Make the USB bootable**:
+
+Install GRUB on the USB:
+
+`sudo grub-install --force --no-floppy --boot-directory=/mnt/boot /dev/sdb`
+
+Get UUID of `/dev/sdb1`:
+
+`blkid`
+
+Change UUID of the partition that is mounting to `/` in `/mnt/etc/fstab` to the UUID of `/dev/sdb1` by editing:
+
+`sudo vim /etc/fstab`
+
+Final step, we need to update GRUB config file:
+
+```
+sudo mount -B /dev /mnt/dev
+sudo mount -B /dev /mnt/proc
+sudo mount -B /dev /mnt/sys
+
+sudo chroot /mnt bash
+update-grub
+```
+
+Now the USB has the clone of your current system.
